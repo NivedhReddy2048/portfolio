@@ -1,96 +1,41 @@
-# NIVEDH — THE SERIES
+# Nivedh Reddy — Portfolio
 
-A cinematic, streaming-inspired portfolio for **Pingili Nivedh Reddy**: Full-Stack & GenAI Developer and B.Tech CSE (AI & ML) graduate.
+Hi, I'm **Pingili Nivedh Reddy**, a Full-Stack & GenAI Developer from Hyderabad, India.
 
-Every section is an episode, every project is an Original, and the whole site plays like a series.
+I graduated in 2026 with a B.Tech in Computer Science & Engineering (AI & ML) from SR University, Warangal. I build production-deployed Django platforms, multi-agent RAG systems, computer-vision pipelines and Azure / AWS data pipelines.
 
-> A personal portfolio with a fictional streaming-platform look. It is not affiliated with Netflix or any other streaming service and uses none of their logos.
+## What I work with
 
-## Run it locally
+- **Languages:** Python, SQL, TypeScript, JavaScript
+- **Backend:** Django, Django REST Framework, Django Channels, Celery, Redis
+- **Frontend:** Next.js, React, Tailwind CSS, Streamlit, Gradio
+- **GenAI & ML:** LangGraph, LangChain, RAG, Gemini API, vector databases, YOLOv8, OpenCV, CLIP
+- **Data Engineering:** PySpark, Azure Databricks, Azure Data Factory, Delta Lake, Azure Event Hubs, AWS Glue, Amazon Athena, Power BI
+- **Infra:** PostgreSQL, Docker, GitHub Actions, AWS S3, Vercel, Render
 
-Requires **Node.js 18+**.
+## Featured projects
 
-```bash
-npm install
-npm run dev
-```
-
-Open the URL Vite prints (usually http://localhost:5173).
-
-Production build:
-
-```bash
-npm run build
-npm run preview
-```
-
-The static site is written to `dist/` and can be deployed as-is to Vercel, Netlify, GitHub Pages or any static host.
-
-## Updating the content
-
-**All content lives in one file: [`src/data/portfolio.ts`](src/data/portfolio.ts).** Project facts come from each repository's README, and every component reads from it.
-
-| To change… | Edit |
+| Project | What it is |
 | --- | --- |
-| Name, intro, email, LinkedIn, GitHub | `profile` |
-| A project, or a new one | `projects` (add an object; it appears in Originals, the overlay, the resume sheet and the counts). Add `live:` for a Live Demo button |
-| Achievements / certifications | `achievements`, `certifications` |
-| Skills and their "where it's used" notes | `skillCategories`, `skillEvidence` |
-| Seasons and episodes (My Journey) | `seasons` |
-| Top 10 row | `topPicks` |
-| ▶ Play Intro highlight reel | `introSlides` |
-| Profile order (Recruiter / Developer / Creative) | `viewerProfiles` |
-| Opening studio card text | `profile.originalLabel` |
+| [EKIP — Multi-Agent RAG](https://github.com/NivedhReddy2048/multi-agent-rag) | 12-node LangGraph pipeline with 9 knowledge agents and cited answers |
+| [CareBridge](https://github.com/NivedhReddy2048/CareBridge) | Healthcare & telemedicine platform (Django, WebRTC, Celery, Razorpay) |
+| [Enterprise Document Intelligence](https://github.com/NivedhReddy2048/enterprise-document-intelligence-platform) | Hybrid-retrieval RAG over large PDFs with citations |
+| [Smart Placement Platform](https://github.com/NivedhReddy2048/smart-placement-platform) | AI resume analysis and job matching (Django + Next.js) |
+| [Real-Time Fraud Detection](https://github.com/NivedhReddy2048/RealTime-Fraud-Detection_DataEngineering) | Streaming lakehouse on Azure — 10.28M transactions |
+| [OpsHub](https://github.com/NivedhReddy2048/OpsHub) | Operations platform for tickets, tasks and teams |
+| [Smart City Traffic Enforcement](https://github.com/NivedhReddy2048/smart-city-traffic-enforcement) | YOLOv8 + ByteTrack + EasyOCR violation detection |
+| [Semantic Video Search](https://github.com/NivedhReddy2048/semantic-video-search-engine) | Find moments in any video with natural language (CLIP + Qdrant) |
 
-**Resume:** replace `public/assets/Nivedh_Reddy_Resume.pdf` (currently a placeholder).
+More on my [GitHub](https://github.com/NivedhReddy2048).
 
-**Photo:** (currently a grey silhouette placeholder) replace `pic1.jpeg` (high-res photo) and `pic.png` (background-removed cutout with the same framing), then run:
+## Certifications
 
-```bash
-npm run images
-```
+- Microsoft Certified: Azure Fundamentals (AZ-900)
+- AWS Academy Graduate — Cloud Foundations
+- AWS Academy Graduate — Machine Learning Foundations
 
-This rebuilds the responsive WebP portraits and the social share image in `public/assets/`.
+## Contact
 
-## What's inside
-
-```
-src/
-  data/portfolio.ts        ← single source of truth
-  App.tsx                  ← stages: opening → profile select → home; overlays
-  components/
-    OpeningSequence        ← black → studio card → NIVEDH → THE SERIES → portrait → ▶ PLAY
-    ProfileSelector        ← "Who's watching?" (changes section order only)
-    Navbar                 ← hide-on-scroll nav, profile switcher, mobile menu
-    Hero                   ← billboard: parallax portrait, particles, light streaks, floating chips
-    PlayIntro              ← ▶ Play Intro: zoom into portrait → highlight reel (pause, ← →, tap zones)
-    ContinueWatching       ← cards with real "watched" progress bars
-    About                  ← The Pilot
-    Seasons / EpisodeCard  ← My Journey as seasons and episodes
-    Originals / ProjectCard← pinned horizontal sequence on desktop, swipe rail on touch
-    ProjectModal           ← full-screen project overlay with a shared-element transition
-    TopPicks               ← Top 10-style row
-    Skills                 ← skill genres; each card shows where the skill appears
-    Achievements           ← award-poster cards + certification rail (links to credentials)
-    ResumeViewer/ResumeModal ← designed resume sheet, PDF viewer, download
-    FinalCTA               ← TO BE CONTINUED… + contact links
-    CustomCursor, fx.tsx   ← cursor states, magnetic buttons, 3D tilt, text reveals, particles
-  hooks/                   ← Lenis smooth scroll + scroll lock, media queries, watch progress
-scripts/build-images.mjs   ← portrait/share-image pipeline (sharp)
-```
-
-**Stack:** React 18, TypeScript, Vite 6, Tailwind CSS 4, Framer Motion 11, Lenis.
-
-## Accessibility and performance
-
-- `prefers-reduced-motion` is respected: smooth scroll, the custom cursor, tilt, particles, grain and the pinned horizontal scroll turn off, and the opening jumps straight to its final frame.
-- Hover effects only run on devices with a precise pointer. Touch devices get tap interactions and native swipe rails.
-- The custom cursor appears only with a mouse or trackpad.
-- Overlays close with Esc, and the highlight reel supports Space and the ← → keys.
-- Portraits are responsive WebP files (25–90 KB). Overlays are code-split, and particles pause when they're off screen.
-
-## Keyboard shortcuts
-
-- **Opening:** Enter or Esc skips it.
-- **Play Intro:** Space pauses, ← and → change slides, Esc closes.
-- **Project and resume overlays:** Esc closes.
+- **Email:** nivedhreddypingili@gmail.com
+- **LinkedIn:** [linkedin.com/in/nivedh-reddy-19074727a](https://www.linkedin.com/in/nivedh-reddy-19074727a)
+- **GitHub:** [github.com/NivedhReddy2048](https://github.com/NivedhReddy2048)
